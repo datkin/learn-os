@@ -1,0 +1,12 @@
+Started with "Writing a Simple Operating System", by Nick Blundell [1].
+
+To build bochs on a Macbook Air:
+
+  ./configure --disable-cdrom --without-macos --without-carbon --with-x11 \
+    --with-term --enable-debugger --enable-disasm --disable-debugger-gui
+
+To build boot_sect.asm:
+
+  nasm boot_sect.asm -f bin -o boot_sect.bin
+
+[1] www.cs.bham.ac.uk/~exr/lectures/opsys/10_11/lectures/os-dev.pdf
