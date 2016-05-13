@@ -5,6 +5,21 @@ To build bochs on a Macbook Air:
   ./configure --disable-cdrom --without-macos --without-carbon --with-x11 \
     --with-term --enable-debugger --enable-disasm --disable-debugger-gui
 
+Or on more recent versions:
+
+  ./configure \
+    --disable-cdrom \
+    --without-macos \
+    --without-carbon \
+    --with-x11 \
+    --with-term \
+    --enable-debugger \
+    --enable-disasm \
+    C{,XX,PP}FLAGS=-I/opt/X11/include \
+    LDFLAGS="-L/opt/X11/lib -lX11"
+
+However, the build is segfaulting for me, at the moment.
+
 To build boot_sect.asm:
 
   nasm boot_sect.asm -f bin -o boot_sect.bin
